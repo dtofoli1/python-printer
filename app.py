@@ -23,7 +23,7 @@ def print_badge():
                 'message': 'attribute {} required'.format(attr)
             }), 400
 
-    # Carrega documento na memoria
+    # Load template file
     doc = load('label.odt')
 
     # Styles
@@ -44,9 +44,9 @@ def print_badge():
     doc.text.addElement(h)
     doc.save('label_print.odt')
 
-    # Imprimir arquivo via terminal e deletar arquivo
-    #os.system('lowriter -p label_print.odt')
-    #os.system('rm label_print.odt')
+    # Create, print and erase printable file.
+    # os.system('lowriter -p label_print.odt')
+    # os.system('rm label_print.odt')
 
     return flask.jsonify({
         'message': 'printing done'
